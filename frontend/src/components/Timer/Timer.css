@@ -14,8 +14,12 @@
 }
 
 .btn-container {
+    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     width: 50%;
-    height: fit-content;
+}
+
+button {
+    height: 20px;
 }
