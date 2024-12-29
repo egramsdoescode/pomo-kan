@@ -1,25 +1,38 @@
 .timer-container {
-    width: 400px;
-    height: 175px;
-    border: 5px solid black;
-    border-radius: 5px;
+    width: 480px;
+    height: 313px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    box-shadow: 0px 2px 5px;
+    background-color: #f5c2e7;
 }
 
 .time {
-    font-size: 2em;
+    font-size: 100px;
+    margin-top: -10px;
+}
+
+#focus-mode {
+    font-size: 30px;
 }
 
 .btn-container {
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 65%;
 }
 
-button {
-    height: 20px;
+.timer-btn {
+    border: none;
+    background-color: #f38ba8;
+    height: 46px;
+    width: 122px;
+    border-radius: 20px;
+    font-size: 25px;
+    font-family: Roboto;
+    font-weight: bold;
+    box-shadow: 0px 1px 5px;
 }

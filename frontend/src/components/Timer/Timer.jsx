@@ -4,12 +4,15 @@ function Timer() {
     return (
         <>
             <div className="timer-container">
-                <div>Focus</div>
-                <label className="time">00:00</label>
+                <div id="focus-mode">Focus</div>
+                <label className="time">25:00</label>
                 <div className="btn-container">
-                    <button id="play-btn">Play</button>
-                    <button id="pause-btn">Pause</button>
-                    <button id="skip-btn">Skip</button>
+                    <button className="timer-btn" id="play-btn">
+                        START
+                    </button>
+                    <button className="timer-btn" id="skip-btn">
+                        SKIP
+                    </button>
                 </div>
             </div>
         </>
