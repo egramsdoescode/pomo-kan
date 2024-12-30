@@ -1,4 +1,4 @@
-.timer-container {
+#timer-container {
     width: 480px;
     height: 313px;
     border-radius: 24px;
@@ -10,19 +10,27 @@
     background-color: #f5c2e7;
 }
 
-.time {
+#countdown {
     font-size: 100px;
+    font-weight: 100;
     margin-top: -10px;
 }
 
 #focus-mode {
+    padding: 0;
+    margin: 0;
     font-size: 30px;
+    font-weight: bold;
 }
 
-.btn-container {
+#btn-container {
     display: flex;
     justify-content: space-between;
     width: 65%;
+}
+
+#skip-btn {
+    background-color: #a6adc8;
 }
 
 .timer-btn {
@@ -30,7 +38,7 @@
     background-color: #f38ba8;
     height: 46px;
     width: 122px;
-    border-radius: 20px;
+    border-radius: 24px;
     font-size: 25px;
     font-family: Roboto;
     font-weight: bold;

@@ -3,10 +3,10 @@ import "./Timer.css";
 function Timer() {
     return (
         <>
-            <div className="timer-container">
-                <div id="focus-mode">Focus</div>
-                <label className="time">25:00</label>
-                <div className="btn-container">
+            <div id="timer-container">
+                <p id="focus-mode">Focus</p>
+                <label id="countdown">25:00</label>
+                <div id="btn-container">
                     <button className="timer-btn" id="play-btn">
                         START
                     </button>
