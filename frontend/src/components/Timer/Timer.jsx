@@ -23,7 +23,7 @@ function Timer() {
     ];
 
     const durations = {
-        [FocusState.FOCUS]: 25 * 60, // 25 minutes
+        [FocusState.FOCUS]: 30 * 60, // 25 minutes
         [FocusState.SHORT]: 5 * 60, // 5 minutes
         [FocusState.LONG]: 30 * 60, // 30 minutes
     };
@@ -43,7 +43,7 @@ function Timer() {
         const body = document.body;
 
         // Remove all previous classes
-        body.classList.remove("focus", "short", "long");
+        body.classList.remove("focus", "short-break", "long-break");
 
         const newFocus = cycle[position];
 
@@ -52,8 +52,8 @@ function Timer() {
             newFocus === FocusState.FOCUS
                 ? "focus"
                 : newFocus === FocusState.SHORT
-                  ? "short"
-                  : "long";
+                  ? "short-break"
+                  : "long-break";
 
         setFocusMode(mode);
         body.classList.add(mode); // Add valid class name
@@ -92,7 +92,7 @@ function Timer() {
 
     return (
         <div id="timer-container" className={focusMode}>
-            <p id="focus-mode">{focusMode}</p>
+            <p id="focus-mode">{focusMode.replace("-", " ")}</p>
             <label id="countdown">
                 {minutesRemaining}:{secondsRemaining}
             </label>

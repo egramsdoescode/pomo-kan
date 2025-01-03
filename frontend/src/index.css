@@ -4,6 +4,7 @@ body {
     font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: white; /* Fallback color */
     transition: background-color 0.5s ease-in-out;
 }
 
@@ -11,11 +12,11 @@ body.focus {
     background-color: #f38ba8;
 }
 
-body.short {
+body.short-break {
     background-color: #cba6f7;
 }
 
-body.long {
+body.long-break {
     background-color: #89b4fa;
 }
 
