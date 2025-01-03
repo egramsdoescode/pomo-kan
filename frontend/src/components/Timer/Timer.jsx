@@ -19,7 +19,6 @@ function Timer() {
         FocusState.FOCUS,
         FocusState.SHORT,
         FocusState.FOCUS,
-        FocusState.SHORT,
         FocusState.LONG,
     ];
 
