@@ -1,35 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-body {
-    font-family: Roboto, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white; /* Fallback color */
-    transition: background-color 0.5s ease-in-out;
-}
-
-body.focus {
-    background-color: #f38ba8;
-}
-
-body.short-break {
-    background-color: #cba6f7;
-}
-
-body.long-break {
-    background-color: #89b4fa;
-}
-
-.app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.main-container {
-    margin-top: 10%;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
