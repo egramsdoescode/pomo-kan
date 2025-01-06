@@ -3,8 +3,10 @@ import { Timer } from "./components";
 function App() {
     return (
         <>
-            <div className="app-container">
-                <div className="main-container">
+            {/* app container */}
+            <div className="flex flex-col h-screen">
+                {/* main container */}
+                <div className="mt-[-60%] flex-1 flex justify-center items-center">
                     <Timer />
                 </div>
             </div>
