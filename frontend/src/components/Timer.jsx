@@ -89,7 +89,7 @@ function Timer() {
         .padStart(2, "0");
     const secondsRemaining = (seconds % 60).toString().padStart(2, "0");
 
-    // Updated start button classes
+    // Update start button classes
     const startBtnClasses = classNames(
         "text-[25px] border-none h-[46px] w-[122px] rounded-[24px] font-bold shadow-[0_1px_5px] transition-colors duration-500 ease-in-out",
         {

@@ -1,2 +1,2 @@
-export { default as Timer } from "./Timer/Timer";
-export { default as NavBar } from "./NavBar/NavBar";
+export { default as Timer } from "./Timer";
+export { default as NavBar } from "./NavBar";
