@@ -91,7 +91,10 @@ function Timer() {
 
     // Update start button classes
     const startBtnClasses = classNames(
-        "text-[25px] border-none h-[46px] w-[122px] rounded-[24px] font-bold shadow-[0_1px_5px] transition-colors duration-500 ease-in-out",
+        `text-[25px] border-none h-[46px] w-[122px] 
+         rounded-[24px] font-bold shadow-[0_1px_5px] 
+         active:shadow-custom-inner 
+         transition-colors duration-500 ease-in-out`,
         {
             "bg-[#f38ba8]": focusMode === "focus",
             "bg-[#cba6f7]": focusMode === "short-break",
@@ -101,7 +104,9 @@ function Timer() {
 
     // Update timer container classes
     const timerContainerClasses = classNames(
-        "w-[480px] h-[313px] border rounded-3xl flex flex-col justify-evenly items-center shadow-[0_2px_5px] transition-colors duration-500 ease-in-out",
+        `mt-[-40%] w-[480px] h-[313px] border rounded-3xl 
+         flex flex-col justify-evenly items-center 
+         shadow-[0_2px_5px] transition-colors duration-500 ease-in-out`,
         {
             "bg-[#f5c2e7]": focusMode === "focus",
             "bg-[#ddc0fc]": focusMode === "short-break",
@@ -109,10 +114,16 @@ function Timer() {
         },
     );
 
+    const skipButtonClasses = classNames(
+        `text-[25px] border-none h-[46px] w-[122px]
+         active:shadow-custom-inner 
+         rounded-[24px] font-bold bg-[#a6adc8] shadow-[0_1px_5px]`,
+    );
+
     return (
         <div className={timerContainerClasses}>
             <p className="font-robo p-0 m-0 text-[30px] font-bold">
-                {focusMode.replace("-", " ")}
+                {focusMode}
             </p>
             <label className="font-robo text-[100px] font-[100] mt-[-10px]">
                 {minutesRemaining}:{secondsRemaining}
@@ -122,7 +133,7 @@ function Timer() {
                     {btnText}
                 </button>
                 <button
-                    className="text-[25px] border-none h-[46px] w-[122px] rounded-[24px] font-bold bg-[#a6adc8] shadow-[0_1px_5px]"
+                    className={skipButtonClasses}
                     onClick={() => {
                         if (btnSound) btnSound.play();
                         setPosition(
