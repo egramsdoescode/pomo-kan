@@ -104,7 +104,7 @@ function Timer() {
 
     // Update timer container classes
     const timerContainerClasses = classNames(
-        `w-[480px] h-[313px] border rounded-3xl 
+        `mb-[24px] w-[480px] h-[313px] border rounded-3xl 
          flex flex-col justify-evenly items-center 
          shadow-[0_2px_5px] transition-colors duration-500 ease-in-out`,
         {
