@@ -7,7 +7,7 @@ function App() {
             <div className="flex flex-col h-screen">
                 {/*<NavBar />*/}
                 {/* main container */}
-                <div className="flex-1 flex justify-center items-center">
+                <div className="pt-24 flex-1 flex justify-center items-start">
                     <Timer />
                 </div>
             </div>
