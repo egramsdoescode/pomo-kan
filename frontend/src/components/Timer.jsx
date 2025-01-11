@@ -31,7 +31,6 @@ function Timer() {
     const [position, setPosition] = useState(0);
     const [seconds, setSeconds] = useState(durations[FocusState.FOCUS]);
     const [isStarted, setIsStarted] = useState(false);
-    const [btnText, setBtnText] = useState("START");
     const [focusMode, setFocusMode] = useState("focus");
 
     const toggleTimer = () => {
@@ -60,12 +59,8 @@ function Timer() {
     }, [focusMode]);
 
     useEffect(() => {
-        if (!isStarted) {
-            setBtnText("START");
-            return;
-        }
+        if (!isStarted) return;
 
-        setBtnText("PAUSE");
         const interval = setInterval(() => {
             setSeconds((prevSeconds) => {
                 if (prevSeconds <= 1) {
@@ -130,7 +125,7 @@ function Timer() {
             </label>
             <div className="font-robo flex justify-between w-[65%]">
                 <button className={startBtnClasses} onClick={toggleTimer}>
-                    {btnText}
+                    {isStarted ? "PAUSE" : "START"}
                 </button>
                 <button
                     className={skipButtonClasses}
