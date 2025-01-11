@@ -1,7 +1,7 @@
 import { useState } from "react";
 function KanBan() {
     return (
-        <div className="h-[480px] w-[80%] border border-black text-neutral-50 bg-neutral-900">
+        <div className="h-[480px] w-full border border-black text-neutral-50 bg-neutral-900">
             <Board />
         </div>
     );

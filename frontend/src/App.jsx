@@ -7,7 +7,7 @@ function App() {
             <div className="flex h-screen">
                 {/*<NavBar />*/}
                 {/* main container */}
-                <div className="pt-24 flex-col flex-1 flex justify-center items-center">
+                <div className="pt-8 flex-col flex-1 flex justify-center items-center">
                     <Timer />
                     <KanBan />
                 </div>
