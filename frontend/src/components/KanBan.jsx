@@ -2,7 +2,7 @@ import Board from "./kanban-components/Board";
 
 function KanBan() {
     return (
-        <div className="h-[480px] w-[90%] border rounded-3xl bg-[#f5c2e7] font-robo shadow-[0_2px_5px_rgba(0,0,0,0.8)]">
+        <div className="inline-block border rounded-3xl bg-[#f5c2e7] font-robo shadow-[0_2px_5px_rgba(0,0,0,0.8)]">
             <Board />
         </div>
     );

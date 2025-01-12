@@ -99,7 +99,7 @@ const Column = ({ title, headingColor, column, cards, setCards }) => {
 
     const filteredCards = cards.filter((c) => c.column === column);
     return (
-        <div className="px-2 w-56 shrink-0 border-l border-r border-neutral-400">
+        <div className="px-2 w-56 shrink-0 ">
             <div className="mb-3 flex items-center justify-center">
                 <h3 className={`font-bold font-robo ${headingColor}`}>
                     {title}

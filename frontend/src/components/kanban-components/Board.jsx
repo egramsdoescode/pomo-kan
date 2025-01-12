@@ -17,30 +17,30 @@ const Board = () => {
     }, []);
 
     return (
-        <div className="flex justify-around h-full w-full gap-3 overflow-scroll p-6">
+        <div className="no-scrollbar flex justify-evenly h-full w-full gap-3 overflow-scroll p-6">
             <Column
-                title="Backlog"
+                title="backlog"
                 column="backlog"
                 headingColor="#000"
                 cards={cards}
                 setCards={setCards}
             />
             <Column
-                title="TODO"
+                title="todo"
                 column="todo"
                 headingColor="#000"
                 cards={cards}
                 setCards={setCards}
             />
             <Column
-                title="In Progress"
+                title="doing"
                 column="doing"
                 headingColor="#000"
                 cards={cards}
                 setCards={setCards}
             />
             <Column
-                title="Complete"
+                title="done"
                 column="done"
                 headingColor="#000"
                 cards={cards}
