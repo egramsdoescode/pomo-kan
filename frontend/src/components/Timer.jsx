@@ -1,3 +1,4 @@
+import { useFocusMode } from "../FocusModeContext";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
 
@@ -31,7 +32,7 @@ function Timer() {
     const [position, setPosition] = useState(0);
     const [seconds, setSeconds] = useState(durations[FocusState.FOCUS]);
     const [isStarted, setIsStarted] = useState(false);
-    const [focusMode, setFocusMode] = useState("focus");
+    const { focusMode, setFocus } = useFocusMode();
 
     const toggleTimer = () => {
         if (btnSound) btnSound.play();
@@ -48,15 +49,9 @@ function Timer() {
                   ? "short-break"
                   : "long-break";
 
-        setFocusMode(mode);
+        setFocus(mode);
         setSeconds(durations[newFocus]);
     }, [position]);
-
-    useEffect(() => {
-        // Update body class when focusMode changes
-        document.body.className = ""; // Clear existing classes
-        document.body.classList.add(focusMode);
-    }, [focusMode]);
 
     useEffect(() => {
         if (!isStarted) return;
