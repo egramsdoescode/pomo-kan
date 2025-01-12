@@ -1,6 +1,5 @@
 import { useFocusMode } from "../FocusModeContext";
 import { useState, useEffect } from "react";
-import classNames from "classnames";
 
 function Timer() {
     const notificationSound = new Audio("/sounds/alarm.mp3");
@@ -79,39 +78,20 @@ function Timer() {
         .padStart(2, "0");
     const secondsRemaining = (seconds % 60).toString().padStart(2, "0");
 
-    // Update start button classes
-    const startBtnClasses = classNames(
-        `text-[25px] border-none h-[46px] w-[122px] 
-         rounded-[24px] font-bold shadow-[0_1px_5px] 
-         active:shadow-custom-inner 
-         transition-colors duration-500 ease-in-out`,
-        {
-            "bg-[#f38ba8]": focusMode === "focus",
-            "bg-[#cba6f7]": focusMode === "short-break",
-            "bg-[#89b4fa]": focusMode === "long-break",
-        },
-    );
-
-    // Update timer container classes
-    const timerContainerClasses = classNames(
-        `mb-[24px] w-[480px] h-[313px] border rounded-3xl 
-         flex flex-col justify-evenly items-center 
-         shadow-[0_2px_5px] transition-colors duration-500 ease-in-out`,
-        {
-            "bg-[#f5c2e7]": focusMode === "focus",
-            "bg-[#ddc0fc]": focusMode === "short-break",
-            "bg-[#dadfef]": focusMode === "long-break",
-        },
-    );
-
-    const skipButtonClasses = classNames(
-        `text-[25px] border-none h-[46px] w-[122px]
-         active:shadow-custom-inner 
-         rounded-[24px] font-bold bg-[#a6adc8] shadow-[0_1px_5px]`,
-    );
-
     return (
-        <div className={timerContainerClasses}>
+        <div
+            className={`
+             mb-[24px] w-[480px] h-[313px] border rounded-3xl 
+             flex flex-col justify-evenly items-center 
+             shadow-[0_2px_5px] transition-colors duration-500 ease-in-out
+            ${
+                focusMode === "focus"
+                    ? "bg-[#f5c2e7]"
+                    : focusMode === "short-break"
+                      ? "bg-[#ddc0fc]"
+                      : "bg-[#dadfef]"
+            }`}
+        >
             <p className="font-robo p-0 m-0 text-[30px] font-bold">
                 {focusMode}
             </p>
@@ -119,11 +99,25 @@ function Timer() {
                 {minutesRemaining}:{secondsRemaining}
             </label>
             <div className="font-robo flex justify-between w-[65%]">
-                <button className={startBtnClasses} onClick={toggleTimer}>
+                <button
+                    className={`
+                     text-[25px] border-none h-[46px] w-[122px] 
+                     rounded-[24px] font-bold shadow-[0_1px_5px] 
+                     active:shadow-custom-inner 
+                     transition-colors duration-500 ease-in-out
+                    ${
+                        focusMode === "focus"
+                            ? "bg-[#f38ba8]"
+                            : focusMode === "short-break"
+                              ? "bg-[#cba6f7]"
+                              : "bg-[#89b4fa]"
+                    }`}
+                    onClick={toggleTimer}
+                >
                     {isStarted ? "PAUSE" : "START"}
                 </button>
                 <button
-                    className={skipButtonClasses}
+                    className="text-[25px] border-none h-[46px] w-[122px] active:shadow-custom-inner rounded-[24px] font-bold bg-[#a6adc8] shadow-[0_1px_5px]"
                     onClick={() => {
                         if (btnSound) btnSound.play();
                         setPosition(
