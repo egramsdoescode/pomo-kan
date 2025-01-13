@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useFocusMode } from "../FocusModeContext";
 import { useState, useEffect } from "react";
 
@@ -32,6 +33,32 @@ function Timer() {
     const [seconds, setSeconds] = useState(durations[FocusState.FOCUS]);
     const [isStarted, setIsStarted] = useState(false);
     const { focusMode, setFocus } = useFocusMode();
+
+    const minutesRemaining = Math.floor(seconds / 60)
+        .toString()
+        .padStart(2, "0");
+    const secondsRemaining = (seconds % 60).toString().padStart(2, "0");
+
+    const containerBaseStyles = `
+        mb-[24px] w-[480px] h-[313px] border rounded-3xl 
+        flex flex-col justify-evenly items-center 
+        shadow-[0_2px_5px] transition-colors duration-500 ease-in-out`;
+    const containerFocusStyles = clsx(containerBaseStyles, {
+        "bg-[#f5c2e7]": focusMode === "focus",
+        "bg-[#ddc0fc]": focusMode === "short-break",
+        "bg-[#dadfef]": focusMode === "long-break",
+    });
+
+    const btnBaseStyles = `
+        text-[25px] border-none h-[46px] w-[122px] 
+        rounded-[24px] font-bold shadow-[0_1px_5px] 
+        active:shadow-custom-inner 
+        transition-colors duration-500 ease-in-out`;
+    const btnFocusStyles = clsx(btnBaseStyles, {
+        "bg-[#f38ba8]": focusMode === "focus",
+        "bg-[#cba6f7]": focusMode === "short-break",
+        "bg-[#89b4fa]": focusMode === "long-break",
+    });
 
     const toggleTimer = () => {
         if (btnSound) btnSound.play();
@@ -73,25 +100,8 @@ function Timer() {
         return () => clearInterval(interval);
     }, [isStarted]);
 
-    const minutesRemaining = Math.floor(seconds / 60)
-        .toString()
-        .padStart(2, "0");
-    const secondsRemaining = (seconds % 60).toString().padStart(2, "0");
-
     return (
-        <div
-            className={`
-             mb-[24px] w-[480px] h-[313px] border rounded-3xl 
-             flex flex-col justify-evenly items-center 
-             shadow-[0_2px_5px] transition-colors duration-500 ease-in-out
-            ${
-                focusMode === "focus"
-                    ? "bg-[#f5c2e7]"
-                    : focusMode === "short-break"
-                      ? "bg-[#ddc0fc]"
-                      : "bg-[#dadfef]"
-            }`}
-        >
+        <div className={containerFocusStyles}>
             <p className="font-robo p-0 m-0 text-[30px] font-bold">
                 {focusMode}
             </p>
@@ -99,21 +109,7 @@ function Timer() {
                 {minutesRemaining}:{secondsRemaining}
             </label>
             <div className="font-robo flex justify-between w-[65%]">
-                <button
-                    className={`
-                     text-[25px] border-none h-[46px] w-[122px] 
-                     rounded-[24px] font-bold shadow-[0_1px_5px] 
-                     active:shadow-custom-inner 
-                     transition-colors duration-500 ease-in-out
-                    ${
-                        focusMode === "focus"
-                            ? "bg-[#f38ba8]"
-                            : focusMode === "short-break"
-                              ? "bg-[#cba6f7]"
-                              : "bg-[#89b4fa]"
-                    }`}
-                    onClick={toggleTimer}
-                >
+                <button className={btnFocusStyles} onClick={toggleTimer}>
                     {isStarted ? "PAUSE" : "START"}
                 </button>
                 <button

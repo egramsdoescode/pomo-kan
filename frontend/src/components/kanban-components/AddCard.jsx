@@ -62,7 +62,7 @@ const AddCard = ({ column, setCards }) => {
             ) : (
                 <button
                     onClick={() => setAdding(true)}
-                    className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-neutral-50"
+                    className="flex w-full items-center gap-1.5 px-3 py-1.5 text-xs text-neutral-400 transition-colors hover:text-[#000]"
                 >
                     <span>Add Card</span>
                     <FiPlus />
