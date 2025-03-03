@@ -22,7 +22,7 @@ function Timer() {
         FocusState.FOCUS,
         FocusState.LONG,
     ];
-
+    
     const durations = {
         [FocusState.FOCUS]: 25 * 60, // 25 minutes
         [FocusState.SHORT]: 5 * 60, // 5 minutes
