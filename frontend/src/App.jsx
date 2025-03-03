@@ -1,34 +1,17 @@
-import { KanBan, Timer } from "./components";
-import { FocusModeProvider, useFocusMode } from "./FocusModeContext";
-import clsx from "clsx";
+import { FocusModeProvider } from "./FocusModeContext";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
-function AppContainer() {
-    const { focusMode } = useFocusMode();
-    const baseStyles =
-        "flex h-screen transition-colors duration-500 ease-in-out";
-    const focusStyles = clsx(baseStyles, {
-        "bg-[#f38ba8]": focusMode === "focus",
-        "bg-[#cba6f7]": focusMode === "short-break",
-        "bg-[#89b4fa]": focusMode === "long-break",
-    });
-    return (
-        <>
-            {/* app container */}
-            <div className={focusStyles}>
-                {/* main container */}
-                <div className="pt-8 flex-col flex-1 flex justify-center items-center">
-                    <Timer />
-                    <KanBan />
-                </div>
-            </div>
-        </>
-    );
-}
+// TODO: put these routes back in after implementing them
+// <Route path="login" element={<Login />} />
+// <Route path="signup" element={<SignUp />} />
 
 function App() {
     return (
         <FocusModeProvider>
-            <AppContainer />
+            <Routes>
+                <Route index element={<Home />}></Route>
+            </Routes>
         </FocusModeProvider>
     );
 }
