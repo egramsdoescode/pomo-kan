@@ -1,6 +1,6 @@
 import { useFocusMode } from "../FocusModeContext";
 import clsx from "clsx";
-import { NavBar, Timer, KanBan } from "../components";
+import { Timer, KanBan } from "../components";
 
 function Home() {
     const { focusMode } = useFocusMode();
@@ -15,7 +15,6 @@ function Home() {
         <>
             {/* app container */}
             <div className={focusStyles}>
-                <NavBar />
                 {/* main container */}
                 <div className="pt-8 flex-col flex-1 flex justify-center items-center">
                     <Timer />
