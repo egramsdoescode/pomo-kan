@@ -1,5 +1,11 @@
 function Login() {
-    return <></>;
+    return (
+        <>
+            <form>
+                <input type="" name="" value=""></input>
+            </form>
+        </>
+    );
 }
 
 export default Login;
