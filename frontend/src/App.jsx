@@ -1,5 +1,5 @@
 import { FocusModeProvider } from "./FocusModeContext";
-import Home from "./pages/Home";
+import { Home } from "./pages";
 import { Routes, Route } from "react-router-dom";
 
 // TODO: put these routes back in after implementing them
