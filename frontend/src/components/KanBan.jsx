@@ -1,4 +1,4 @@
-import { useFocusMode } from "../FocusModeContext.1";
+import { useFocusMode } from "../FocusModeContext";
 import Board from "./kanban-components/Board";
 import clsx from "clsx";
 

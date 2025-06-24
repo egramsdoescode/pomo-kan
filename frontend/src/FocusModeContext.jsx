@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import react from "react";
 
-const FocusModeContext = createContext();
+const FocusModeContext = react.createContext();
 
 export const FocusModeProvider = ({ children }) => {
-  const [focusMode, setFocus] = useState("focus");
+  const [focusMode, setFocus] = react.useState("focus");
 
   return (
     <FocusModeContext.Provider value={{ focusMode, setFocus }}>
@@ -12,4 +12,4 @@ export const FocusModeProvider = ({ children }) => {
   );
 };
 
-export const useFocusMode = () => useContext(FocusModeContext);
+export const useFocusMode = () => react.useContext(FocusModeContext);

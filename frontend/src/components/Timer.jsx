@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useFocusMode } from "../FocusModeContext.1";
+import { useFocusMode } from "../FocusModeContext";
 import { useState, useEffect } from "react";
 
 function Timer() {
