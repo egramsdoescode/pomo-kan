@@ -30,8 +30,8 @@ Make sure you have the following installed:
 ### Installation
 
 ```bash
-git clone https://github.com/egramsdoescode/pomodoro-timer.git
-cd pomodoro-timer 
+git clone https://github.com/egramsdoescode/pomo-kan.git
+cd pomo-kan 
 npm install
 ```
 
