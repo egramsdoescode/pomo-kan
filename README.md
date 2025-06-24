@@ -4,9 +4,9 @@ A responsive, theme-adaptive web app designed to help users stay productive usin
 
 ## 🧩 Features
 
-- ⏳ **Timer Component**: Central productivity timer (component not included in upload).
-- ✅ **Kanban Board**: Visual task tracker to stay on top of your goals (component not included in upload).
-- 🧠 **Focus Mode Context**: Dynamically change background color based on Pomodoro status (`focus`, `short-break`, `long-break`).
+- ⏳ **Timer Component**: Central productivity timer 
+- ✅ **Kanban Board**: Visual task tracker to stay on top of your goals 
+- 🧠 **Focus Mode Context**: Dynamically change background color based on Pomodoro status (`focus`, `short-break`, `long-break`)
 
 ## 🛠️ Tech Stack
 
