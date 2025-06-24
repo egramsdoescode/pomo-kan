@@ -2,6 +2,10 @@
 
 A responsive, theme-adaptive web app designed to help users stay productive using a Pomodoro timer system and an integrated Kanban board. Built with React and Tailwind CSS.
 
+## 🎥 Demo
+
+<video src="https://github.com/user-attachments/assets/78e29134-878a-479d-9c71-384933de3364" ></video>
+
 ## 🧩 Features
 
 - ⏳ **Timer Component**: Central productivity timer 
